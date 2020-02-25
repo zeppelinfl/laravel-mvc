@@ -1,0 +1,85 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Country;
+
+class CountriesController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * List Countries.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $country = new Country;
+        return view('admin.country.index', ['countries' => $country->get()]);
+    }
+
+    /**
+     * Create countries form.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function create()
+    {
+
+        return view('admin.country.create');   
+    }
+
+    /**
+     * Edit countries form.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function edit($id)
+    {
+        $country = new Country;
+        return view('admin.country.edit', ['country' => $country->where('id', '=', $id)->first()]);   
+    }
+
+    /**
+     * Delete countries form.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function delete($id, Request $request)
+    {
+        $country = new Country;
+        $country->where('id', '=', $id)->delete();
+        return redirect()->route('countryA');
+    }
+
+    /**
+     * Create countries process.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function store(Request $request)
+    {
+       
+        $country = new Country;
+        if($request->id != '') {
+            $country = $country->find($request->id);
+            $country->id = $request->id; 
+        }
+        $country->name = $request->name;
+        $country->save();
+        return redirect()->route('countryA');
+    }
+
+
+}
