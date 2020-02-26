@@ -1,7 +1,7 @@
 @extends('layouts.adminapp')
 @section('content')
 <div class="container">
-	<h2>Events</h2>
+	<h2>Places</h2>
 	<div class="add_contact">
 		<a href="{{ route('placeCreateA') }}">Add</a>
 	</div>

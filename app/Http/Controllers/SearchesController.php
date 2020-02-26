@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\Event;
 use App\Models\Experience;
 use App\Models\Place;
+use App\Models\Type;
 
 class SearchesController extends Controller
 {
@@ -24,6 +25,7 @@ class SearchesController extends Controller
         $this->event = new Event;
         $this->experience = new Experience;
         $this->place = new Place;
+        $this->type = new Type;
     }
 
     /**
@@ -39,10 +41,14 @@ class SearchesController extends Controller
         $data['city'] = $city_data;
         if($city_data != '') {
             $data['country'] = $this->country->whereId($city_data->country_id)->first();
-            $data['events'] = $this->event->whereId($city_data->id)->get();
-            $data['places'] = $this->place->whereId($city_data->id)->get();
+            $events = $this->event->where('city_id', $city_data->id)->get();
+            foreach ($events as $key => $value) {
+                $events[$key]['type'] = $this->type->where('id', $value->type_id)->first();
+            }
+            $data['events'] = $events;
+            $data['places'] = $this->place->where('city_id', $city_data->id)->get();
             if($city_data->country_id > 0) {
-                $data['experiences'] = $this->experience->whereId($city_data->country_id)->get();
+                $data['experiences'] = $this->experience->where('country_id', $city_data->country_id)->get();
             }
         }
         return view('search.index', $data);

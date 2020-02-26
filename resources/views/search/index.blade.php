@@ -15,4 +15,5 @@
 			@endif
 		@endif
 	</div>
+	@include('search.event', ['events' => $events])
 @endsection

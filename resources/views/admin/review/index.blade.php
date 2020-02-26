@@ -1,7 +1,7 @@
 @extends('layouts.adminapp')
 @section('content')
 <div class="container">
-	<h2>Contacts</h2>
+	<h2>Reviews</h2>
 	<div class="add_contact">
 		<a href="{{ route('reviewCreateA') }}">Add</a>
 	</div>
