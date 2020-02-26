@@ -102,7 +102,7 @@ class ContactsController extends Controller
         }
 
         $contact->save();
-        return redirect()->route('contactA');
+        return redirect()->route('contactA')->with('success', 'Contact stored succesfully!');
     }
 
 

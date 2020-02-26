@@ -90,7 +90,7 @@ class SubcategoriesController extends Controller
         }
         $subcategory->name = $request->name;
         $subcategory->save();
-        return redirect()->route('subcategoryA');
+        return redirect()->route('subcategoryA')->with('success', 'Subcategory stored succesfully!');
     }
 
 

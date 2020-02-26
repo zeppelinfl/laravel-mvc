@@ -19,7 +19,6 @@ class SearchesController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
         $this->city = new City;
         $this->country = new Country;
         $this->event = new Event;
@@ -48,5 +47,4 @@ class SearchesController extends Controller
         }
         return view('search.index', $data);
     }
-
 }

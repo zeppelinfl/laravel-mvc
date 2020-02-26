@@ -103,7 +103,7 @@ class CitiesController extends Controller
         $city->listings = $request->listings;
         $city->country_id = $request->country_id;
         $city->save();
-        return redirect()->route('cityA');
+        return redirect()->route('cityA')->with('success', 'City stored succesfully!');
     }
 
 

@@ -62,9 +62,7 @@ fieldset {
 	margin:auto;
 	text-align: center;
 }
-input {
-	width:200px;
-}
+
 .action_delete {
 	color:red;
 	font-weight: bold;

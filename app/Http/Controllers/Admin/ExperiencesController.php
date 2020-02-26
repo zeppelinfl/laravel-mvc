@@ -106,7 +106,7 @@ class ExperiencesController extends Controller
         }
         $experience->country_id = $request->country_id;
         $experience->save();
-        return redirect()->route('experienceA');
+        return redirect()->route('experienceA')->with('success', 'Experience stored succesfully!');
     }
 
 

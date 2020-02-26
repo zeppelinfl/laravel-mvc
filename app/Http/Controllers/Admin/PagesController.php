@@ -91,7 +91,7 @@ class PagesController extends Controller
         $page->title = $request->title;
         $page->content = $request->content;
         $page->save();
-        return redirect()->route('pageA');
+        return redirect()->route('pageA')->with('success', 'Page stored succesfully!');
     }
 
 

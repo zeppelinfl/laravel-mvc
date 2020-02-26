@@ -116,7 +116,7 @@ class EventsController extends Controller
         $event->type_id = $request->type_id;
         $event->city_id = $request->city_id;
         $event->save();
-        return redirect()->route('eventA');
+        return redirect()->route('eventA')->with('success', 'Event stored succesfully!');
     }
 
 

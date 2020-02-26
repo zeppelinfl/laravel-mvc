@@ -100,7 +100,7 @@ class ReviewsController extends Controller
         $review->message = $request->message;
         $review->user_id = $request->user_id;
         $review->save();
-        return redirect()->route('reviewA');
+        return redirect()->route('reviewA')->with('success', 'Review stored succesfully!');
     }
 
 

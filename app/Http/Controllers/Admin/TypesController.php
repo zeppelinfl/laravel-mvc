@@ -90,7 +90,7 @@ class TypesController extends Controller
         }
         $type->name = $request->name;
         $type->save();
-        return redirect()->route('typeA');
+        return redirect()->route('typeA')->with('success', 'Type stored succesfully!');
     }
 
 

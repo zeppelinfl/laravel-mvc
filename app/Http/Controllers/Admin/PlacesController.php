@@ -113,7 +113,7 @@ class PlacesController extends Controller
             }
         }
         $place->save();
-        return redirect()->route('placeA');
+        return redirect()->route('placeA')->with('success', 'Place stored succesfully!');
     }
 
 
