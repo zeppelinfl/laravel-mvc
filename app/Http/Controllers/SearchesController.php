@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\City;
+use App\Models\Country;
 
-class SearchController extends Controller
+class SearchesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -37,12 +38,16 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function find()
+    public function find(Request $request)
     {
         $city = new City;
+        $country = new Country;
+        $city_data = $city->whereId($request->location)->first();
+        $country_data = $country->whereId($city_data->country_id)->first();
         $data = [
-            'cities' => $city->get(),
+            'city' => $city_data,
+            'country' => $country_data,
         ];
-        dd('here');
+        dd($country_data);
     }
 }

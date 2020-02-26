@@ -30,6 +30,7 @@
     <div id="app">
         @include('admin.header')
         <main class="py-4">
+            @include('flash-message')
             @yield('content')
         </main>
         @include('admin.footer')

@@ -54,7 +54,7 @@ class ContactsController extends Controller
         }
 
         $contact->save();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Contact Sent!');
     }
 
 

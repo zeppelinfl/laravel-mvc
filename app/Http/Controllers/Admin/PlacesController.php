@@ -106,15 +106,11 @@ class PlacesController extends Controller
             $request->image->store('public/places');
             $place->image = $request->image->hashName();
         }
-
-        $place->name = $request->name;
-        $place->open = $request->open;
-        $place->close = $request->close;
-        $place->address = $request->address;
-        $place->review_count = $request->review_count;
-        $place->review_score = $request->review_score;
-        $place->subcategory_id = $request->subcategory_id;
-        $place->city_id = $request->city_id;
+        foreach ($request->all() as $key => $value) {
+            if($key != '_token') {
+                $place->$key = $value;
+            }
+        }
         $place->save();
         return redirect()->route('placeA');
     }

@@ -31,6 +31,7 @@
         <div class="backgr-img"><div class="layer"></div></div>
         @include('header')
         <main class="py-4">
+            @include('flash-message')
             @yield('content')
         </main>
         @include('footer')

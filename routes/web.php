@@ -17,8 +17,8 @@ Route::get('/', 'HomeController@index')->name('home');
 	Route::get('/contact-us', 'ContactsController@index')->name('contactF');
 	Route::post('/store', 'ContactsController@store')->name('contactStoreF');
 	// search
-	Route::post('/search', 'SearchController@index')->name('searchF');
-	Route::post('/search/find', 'SearchController@find')->name('searchFindF');
+	Route::post('/search', 'SearchesController@index')->name('searchF');
+	Route::post('/search/find', 'SearchesController@find')->name('searchFindF');
 // home routes [end]
 Auth::routes();
 // admin routes [start]

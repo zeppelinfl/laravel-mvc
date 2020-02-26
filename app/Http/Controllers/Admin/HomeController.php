@@ -28,11 +28,10 @@ class HomeController extends Controller
     {
         $contacts = new Contact;
         $users = new User;
-        $city = new City;
         $data = [
             'contacts' => $contacts->get(),
             'users' => $users->get(),
         ];
-        return view('admin.home', [$data]);
+        return view('admin.home', $data);
     }
 }
