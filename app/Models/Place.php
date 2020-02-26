@@ -17,7 +17,7 @@ class Place extends Model
     ];
 
     /**
-     * Get the city that has the event.
+     * Get the city that has the place.
      */
     public function city()
     {
@@ -25,7 +25,7 @@ class Place extends Model
     }
 
     /**
-     * Get the type that has the event.
+     * Get the subcategory that the place has.
      */
     public function subcategory()
     {

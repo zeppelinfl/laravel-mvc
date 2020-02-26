@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Country;
+use App\Models\Page;
 
-class CountriesController extends Controller
+class PagesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,77 +19,78 @@ class CountriesController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Pages.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        $country = new Country;
-        return view('admin.country.index', ['countries' => $country->get()]);
+        $page = new Page;
+        return view('admin.page.index', ['pages' => $page->get()]);
     }
 
     /**
-     * Create country form.
+     * Create page form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function create()
     {
 
-        return view('admin.country.create');   
+        return view('admin.page.create');   
     }
 
     /**
-     * Edit country form.
+     * Edit page form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function edit($id)
     {
-        $country = new Country;
-        return view('admin.country.edit', ['country' => $country->where('id', '=', $id)->first()]);   
+        $page = new Page;
+        return view('admin.page.edit', ['page' => $type->where('id', '=', $id)->first()]);   
     }
 
     /**
-     * View country.
+     * View page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function view($id)
     {
-        $country = new Country;
-        return view('admin.country.view', ['country' => $country->where('id', '=', $id)->first()]);   
+        $page = new Page;
+        return view('admin.page.view', ['page' => $type->where('id', '=', $id)->first()]);   
     }
 
     /**
-     * Delete country.
+     * Delete page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function delete($id, Request $request)
     {
-        $country = new Country;
-        $country->where('id', '=', $id)->delete();
-        return redirect()->route('countryA');
+        $page = new Page;
+        $page->where('id', '=', $id)->delete();
+        return redirect()->route('pageA');
     }
 
     /**
-     * Create/Update country process.
+     * Create/Update type process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function store(Request $request)
     {
        
-        $country = new Country;
+        $page = new Page;
         if($request->id != '') {
-            $country = $country->find($request->id);
-            $country->id = $request->id; 
+            $page = $page->find($request->id);
+            $page->id = $request->id; 
         }
-        $country->name = $request->name;
-        $country->save();
-        return redirect()->route('countryA');
+        $page->title = $request->title;
+        $page->content = $request->content;
+        $page->save();
+        return redirect()->route('pageA');
     }
 
 

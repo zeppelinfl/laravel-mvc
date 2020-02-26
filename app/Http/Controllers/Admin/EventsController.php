@@ -21,7 +21,7 @@ class EventsController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Events.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -39,7 +39,7 @@ class EventsController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create event form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -51,7 +51,7 @@ class EventsController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit event form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -63,8 +63,21 @@ class EventsController extends Controller
         return view('admin.event.edit', ['event' => $event->where('id', '=', $id)->first(), 'cities' => $city->select('id', 'name')->get(), 'types' => $type->select('id', 'name')->get()]);   
     }
 
+     /**
+     * View event.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $event = new Event;
+        $city = new City;
+        $type = new Type;
+        return view('admin.event.view', ['event' => $event->where('id', '=', $id)->first(), 'cities' => $city->select('id', 'name')->get(), 'types' => $type->select('id', 'name')->get()]);   
+    }
+
     /**
-     * Delete countries form.
+     * Delete event.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -76,7 +89,7 @@ class EventsController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update event process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

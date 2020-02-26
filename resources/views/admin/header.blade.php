@@ -22,34 +22,75 @@
                         <a class="dropdown-item" href="{{ route('contactA') }}">
                             {{ __('Contacts') }}
                         </a>
+                         <a class="dropdown-item" href="{{ route('reviewA') }}">
+                            {{ __('Reviews') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('pageA') }}">
+                            {{ __('Pages') }}
+                        </a>
+                         <a class="dropdown-item" href="{{ route('categoryA') }}">
+                            {{ __('Categories') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('subcategoryA') }}">
+                            {{ __('Subcategories') }}
+                        </a>
+                         <a class="dropdown-item" href="{{ route('experienceA') }}">
+                            {{ __('Experiences') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('typeA') }}">
+                            {{ __('Types') }}
+                        </a>
+                    </div>
+                </li>
+            </ul>
+             <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ __('Locations') }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('countryA') }}">
                             {{ __('Countries') }}
                         </a>
                          <a class="dropdown-item" href="{{ route('cityA') }}">
                             {{ __('Cities') }}
                         </a>
-                        <a class="dropdown-item" href="{{ route('categoryA') }}">
-                            {{ __('Categories') }}
-                        </a>
-                        <a class="dropdown-item" href="{{ route('typeA') }}">
-                            {{ __('Types') }}
-                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ __('Events') }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('eventA') }}">
-                            {{ __('Events') }}
+                            {{ __('Events List') }}
                         </a>
-                        <a class="dropdown-item" href="{{ route('subcategoryA') }}">
-                            {{ __('Subcategories') }}
-                        </a>
-                        <a class="dropdown-item" href="{{ route('placeA') }}">
-                            {{ __('Places') }}
-                        </a>
-                         <a class="dropdown-item" href="{{ route('reviewA') }}">
-                            {{ __('Reviews') }}
+                        <a class="dropdown-item" href="{{ route('eventCreateA') }}">
+                            {{ __('Create Event') }}
                         </a>
                     </div>
                 </li>
             </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ __('Places') }} <span class="caret"></span>
+                    </a>
 
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('placeA') }}">
+                            {{ __('List Places') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('placeCreateA') }}">
+                            {{ __('Create Places') }}
+                        </a>
+                    </div>
+                </li>
+            </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->

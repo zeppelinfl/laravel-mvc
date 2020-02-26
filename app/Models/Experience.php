@@ -17,7 +17,7 @@ class Experience extends Model
     ];
 
     /**
-     * Get the city that has the event.
+     * Get the country that has the experience.
      */
     public function country()
     {

@@ -31,7 +31,7 @@ class ContactsController extends Controller
     }
 
     /**
-     * Create contacts form.
+     * Create contact form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -42,7 +42,7 @@ class ContactsController extends Controller
     }
 
     /**
-     * Edit contacts form.
+     * Edit contact form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -53,7 +53,7 @@ class ContactsController extends Controller
     }
 
      /**
-     * Edit contacts form.
+     * View contact.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -64,7 +64,7 @@ class ContactsController extends Controller
     }
 
     /**
-     * Delete contacts form.
+     * Delete contact.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -76,7 +76,7 @@ class ContactsController extends Controller
     }
 
     /**
-     * Create contacts process.
+     * Create/Update contact process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

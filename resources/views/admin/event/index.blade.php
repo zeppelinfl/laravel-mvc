@@ -31,6 +31,7 @@
 					<td>{{ $event->created_at }}</td>
 					<td>{{ $event->updated_at }}</td>
 					<td>
+						<a href="{{ route('eventViewA', ['id' => $event->id]) }}">View</a>
 						<a href="{{ route('eventEditA', ['id' => $event->id]) }}">Edit</a>
 						<a href="{{ route('eventDeleteA', ['id' => $event->id]) }}">Delete</a>				
 					</td>

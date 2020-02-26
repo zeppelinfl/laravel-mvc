@@ -19,7 +19,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Categories.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create category form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -41,7 +41,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit category form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -52,7 +52,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * View category.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -63,7 +63,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Delete countries form.
+     * Delete category.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -75,7 +75,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update category process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

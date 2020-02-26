@@ -20,7 +20,7 @@ class ReviewsController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Reviews.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -38,7 +38,7 @@ class ReviewsController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create review form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -49,7 +49,7 @@ class ReviewsController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit review form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -61,7 +61,19 @@ class ReviewsController extends Controller
     }
 
     /**
-     * Delete countries form.
+     * View review.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $review = new Review;
+        $user = new User;
+        return view('admin.review.view', ['review' => $review->where('id', '=', $id)->first(), 'users' => $user->select('id', 'email')->get()]);   
+    }
+
+    /**
+     * Delete review.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -73,7 +85,7 @@ class ReviewsController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update review process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

@@ -35,6 +35,7 @@
 					<td>{{ $place->created_at }}</td>
 					<td>{{ $place->updated_at }}</td>
 					<td>
+						<a href="{{ route('placeViewA', ['id' => $place->id]) }}">View</a>
 						<a href="{{ route('placeEditA', ['id' => $place->id]) }}">Edit</a>
 						<a href="{{ route('placeDeleteA', ['id' => $place->id]) }}">Delete</a>				
 					</td>

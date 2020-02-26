@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class Page extends Model
 {
 
     /**
@@ -13,14 +13,6 @@ class Review extends Model
      * @var array
      */
     protected $fillable = [
-        'message'
+        'title', 'content'
     ];
-
-    /**
-     * Get the user that has the review.
-     */
-    public function user()
-    {
-        return $this->belongsTo('App\User');
-    }
 }

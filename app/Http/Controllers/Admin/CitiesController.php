@@ -20,7 +20,7 @@ class CitiesController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Cities.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -37,7 +37,7 @@ class CitiesController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create city form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -48,7 +48,7 @@ class CitiesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit city form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -60,7 +60,7 @@ class CitiesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * View city.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -72,7 +72,7 @@ class CitiesController extends Controller
     }
 
     /**
-     * Delete countries form.
+     * Delete city.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -84,7 +84,7 @@ class CitiesController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update city process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

@@ -21,7 +21,7 @@ class ExperiencesController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Experiences.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -39,7 +39,7 @@ class ExperiencesController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create experience form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -50,7 +50,7 @@ class ExperiencesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit experience form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -62,7 +62,19 @@ class ExperiencesController extends Controller
     }
 
     /**
-     * Delete countries form.
+     * View experience.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $experience = new Experience;
+        $country = new Country;
+        return view('admin.experience.view', ['experience' => $experience->where('id', '=', $id)->first(), 'countries' => $country->select('id', 'name')->get()]);   
+    }
+
+    /**
+     * Delete experience.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -74,7 +86,7 @@ class ExperiencesController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update experience process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

@@ -25,6 +25,7 @@
 					<td>{{ $review->created_at }}</td>
 					<td>{{ $review->updated_at }}</td>
 					<td>
+						<a href="{{ route('reviewViewA', ['id' => $review->id]) }}">View</a>
 						<a href="{{ route('reviewEditA', ['id' => $review->id]) }}">Edit</a>
 						<a href="{{ route('reviewDeleteA', ['id' => $review->id]) }}">Delete</a>				
 					</td>

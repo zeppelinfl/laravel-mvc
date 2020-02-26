@@ -23,6 +23,7 @@
 					<td>{{ $country->created_at }}</td>
 					<td>{{ $country->updated_at }}</td>
 					<td>
+						<a href="{{ route('countryViewA', ['id' => $country->id]) }}">View</a>
 						<a href="{{ route('countryEditA', ['id' => $country->id]) }}">Edit</a>
 						<a href="{{ route('countryDeleteA', ['id' => $country->id]) }}">Delete</a>				
 					</td>

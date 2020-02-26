@@ -23,6 +23,7 @@
 					<td>{{ $subcategory->created_at }}</td>
 					<td>{{ $subcategory->updated_at }}</td>
 					<td>
+						<a href="{{ route('subcategoryViewA', ['id' => $subcategory->id]) }}">View</a>
 						<a href="{{ route('subcategoryEditA', ['id' => $subcategory->id]) }}">Edit</a>
 						<a href="{{ route('subcategoryDeleteA', ['id' => $subcategory->id]) }}">Delete</a>				
 					</td>

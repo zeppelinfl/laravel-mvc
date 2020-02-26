@@ -4,3 +4,10 @@
 .row-view {
 	border-bottom: 1px solid #cccccc;
 }
+.navbar-brand {
+	border-right:1px solid #cccccc;
+	padding-right:10px;
+}
+.dropdown {
+	height:unset !important;
+}

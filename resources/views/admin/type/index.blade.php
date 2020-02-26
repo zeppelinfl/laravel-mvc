@@ -23,6 +23,7 @@
 					<td>{{ $type->created_at }}</td>
 					<td>{{ $type->updated_at }}</td>
 					<td>
+						<a href="{{ route('typeViewA', ['id' => $type->id]) }}">View</a>
 						<a href="{{ route('typeEditA', ['id' => $type->id]) }}">Edit</a>
 						<a href="{{ route('typeDeleteA', ['id' => $type->id]) }}">Delete</a>				
 					</td>

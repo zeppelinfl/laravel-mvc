@@ -19,7 +19,7 @@ class TypesController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -30,7 +30,7 @@ class TypesController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create type form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -41,7 +41,7 @@ class TypesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit type form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -52,7 +52,18 @@ class TypesController extends Controller
     }
 
     /**
-     * Delete countries form.
+     * View type.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $type = new Type;
+        return view('admin.type.view', ['type' => $type->where('id', '=', $id)->first()]);   
+    }
+
+    /**
+     * Delete type.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -64,7 +75,7 @@ class TypesController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update type process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

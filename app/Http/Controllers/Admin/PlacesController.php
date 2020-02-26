@@ -21,7 +21,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Places.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -39,7 +39,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create place form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -51,7 +51,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit place form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -64,7 +64,20 @@ class PlacesController extends Controller
     }
 
     /**
-     * Delete countries form.
+     * View place.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $place = new Place;
+        $city = new City;
+        $subcategory = new Subcategory;
+        return view('admin.place.view', ['place' => $place->where('id', '=', $id)->first(), 'cities' => $city->select('id', 'name')->get(), 'subcategories' => $subcategory->select('id', 'name')->get()]);   
+    }
+
+    /**
+     * Delete place.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -76,7 +89,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update place process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

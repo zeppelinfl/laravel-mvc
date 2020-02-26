@@ -19,7 +19,7 @@ class SubcategoriesController extends Controller
     }
 
     /**
-     * List Countries.
+     * List Subcategories.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -30,7 +30,7 @@ class SubcategoriesController extends Controller
     }
 
     /**
-     * Create countries form.
+     * Create subcategory form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -41,7 +41,7 @@ class SubcategoriesController extends Controller
     }
 
     /**
-     * Edit countries form.
+     * Edit subcategory form.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -52,7 +52,18 @@ class SubcategoriesController extends Controller
     }
 
     /**
-     * Delete countries form.
+     * View subcategory.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $subcategory = new Subcategory;
+        return view('admin.subcategory.view', ['subcategory' => $subcategory->where('id', '=', $id)->first()]);   
+    }
+
+    /**
+     * Delete subcategory.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -64,7 +75,7 @@ class SubcategoriesController extends Controller
     }
 
     /**
-     * Create countries process.
+     * Create/Update subcategory process.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

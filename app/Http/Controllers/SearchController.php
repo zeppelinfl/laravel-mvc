@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\City;
 
-class HomeController extends Controller
+class SearchController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show searched data.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -29,6 +29,20 @@ class HomeController extends Controller
         $data = [
             'cities' => $city->get(),
         ];
-        return view('home', $data);
+        return view('search.index');
+    }
+
+    /**
+     * Find searched data.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function find()
+    {
+        $city = new City;
+        $data = [
+            'cities' => $city->get(),
+        ];
+        dd('here');
     }
 }

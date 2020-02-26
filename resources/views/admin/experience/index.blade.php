@@ -25,6 +25,7 @@
 					<td>{{ $experience->created_at }}</td>
 					<td>{{ $experience->updated_at }}</td>
 					<td>
+						<a href="{{ route('experienceViewA', ['id' => $experience->id]) }}">View</a>
 						<a href="{{ route('experienceEditA', ['id' => $experience->id]) }}">Edit</a>
 						<a href="{{ route('experienceDeleteA', ['id' => $experience->id]) }}">Delete</a>				
 					</td>
