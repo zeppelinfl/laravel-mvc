@@ -25,6 +25,7 @@
 					<td>{{ $contact->created_at }}</td>
 					<td>{{ $contact->updated_at }}</td>
 					<td>
+						<a href="{{ route('contactViewA', ['id' => $contact->id]) }}">View</a>
 						<a href="{{ route('contactEditA', ['id' => $contact->id]) }}">Edit</a>
 						<a href="{{ route('contactDeleteA', ['id' => $contact->id]) }}">Delete</a>				
 					</td>

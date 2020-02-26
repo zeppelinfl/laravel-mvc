@@ -52,6 +52,17 @@ class ContactsController extends Controller
         return view('admin.contact.edit', ['contact' => $contact->where('id', '=', $id)->first()]);   
     }
 
+     /**
+     * Edit contacts form.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $contact = new Contact;
+        return view('admin.contact.view', ['contact' => $contact->where('id', '=', $id)->first()]);   
+    }
+
     /**
      * Delete contacts form.
      *

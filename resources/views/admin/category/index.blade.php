@@ -27,6 +27,7 @@
 					<td>{{ $category->created_at }}</td>
 					<td>{{ $category->updated_at }}</td>
 					<td>
+						<a href="{{ route('categoryViewA', ['id' => $category->id]) }}">View</a>
 						<a href="{{ route('categoryEditA', ['id' => $category->id]) }}">Edit</a>
 						<a href="{{ route('categoryDeleteA', ['id' => $category->id]) }}">Delete</a>				
 					</td>

@@ -34,6 +34,18 @@
                         <a class="dropdown-item" href="{{ route('typeA') }}">
                             {{ __('Types') }}
                         </a>
+                        <a class="dropdown-item" href="{{ route('eventA') }}">
+                            {{ __('Events') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('subcategoryA') }}">
+                            {{ __('Subcategories') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('placeA') }}">
+                            {{ __('Places') }}
+                        </a>
+                         <a class="dropdown-item" href="{{ route('reviewA') }}">
+                            {{ __('Reviews') }}
+                        </a>
                     </div>
                 </li>
             </ul>

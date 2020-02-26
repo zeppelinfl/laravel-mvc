@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Place extends Model
 {
 
     /**
@@ -13,7 +13,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'data', 'time', 'address', 'review_count', 'image'
+        'name', 'open', 'close', 'address', 'review_count', 'review_score', 'image'
     ];
 
     /**
@@ -27,8 +27,8 @@ class Event extends Model
     /**
      * Get the type that has the event.
      */
-    public function type()
+    public function subcategory()
     {
-        return $this->belongsTo('App\Models\Type', 'type_id');
+        return $this->belongsTo('App\Models\Subcategory', 'subcategory_id');
     }
 }

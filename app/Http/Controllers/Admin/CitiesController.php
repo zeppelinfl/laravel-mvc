@@ -28,9 +28,9 @@ class CitiesController extends Controller
     {
         $city = new City;
         $cities = $city->get();
-
+        $country = new Country;
         foreach ($cities as $key => $value) {
-            $country = $city->find($value->country_id)->country()->first();
+            $country = $country->whereId($value->country_id)->first();
             $cities[$key]['country_name'] = $country->name;
         }
         return view('admin.city.index', ['cities' => $cities]);
@@ -57,6 +57,18 @@ class CitiesController extends Controller
         $city = new City;
         $country = new Country;
         return view('admin.city.edit', ['city' => $city->where('id', '=', $id)->first(), 'countries' => $country->select('id', 'name')->get()]);   
+    }
+
+    /**
+     * Edit countries form.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $city = new City;
+        $country = new Country;
+        return view('admin.city.view', ['city' => $city->where('id', '=', $id)->first(), 'countries' => $country->select('id', 'name')->get()]);   
     }
 
     /**

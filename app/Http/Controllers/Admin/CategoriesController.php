@@ -52,6 +52,17 @@ class CategoriesController extends Controller
     }
 
     /**
+     * Edit countries form.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function view($id)
+    {
+        $category = new Category;
+        return view('admin.category.view', ['category' => $category->where('id', '=', $id)->first()]);   
+    }
+
+    /**
      * Delete countries form.
      *
      * @return \Illuminate\Contracts\Support\Renderable

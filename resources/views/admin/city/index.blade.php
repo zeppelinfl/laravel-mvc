@@ -25,6 +25,7 @@
 					<td>{{ $city->created_at }}</td>
 					<td>{{ $city->updated_at }}</td>
 					<td>
+						<a href="{{ route('cityViewA', ['id' => $city->id]) }}">View</a>
 						<a href="{{ route('cityEditA', ['id' => $city->id]) }}">Edit</a>
 						<a href="{{ route('cityDeleteA', ['id' => $city->id]) }}">Delete</a>				
 					</td>
