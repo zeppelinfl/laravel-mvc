@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Event;
+use App\Models\Experience;
+use App\Models\Place;
 
 class SearchesController extends Controller
 {
@@ -17,6 +20,11 @@ class SearchesController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
+        $this->city = new City;
+        $this->country = new Country;
+        $this->event = new Event;
+        $this->experience = new Experience;
+        $this->place = new Place;
     }
 
     /**
@@ -24,30 +32,21 @@ class SearchesController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $city = new City;
-        $data = [
-            'cities' => $city->get(),
-        ];
-        return view('search.index');
+        $data = [];
+        $data['search'] = $request->search;
+        $city_data = $this->city->whereId($request->location)->first();
+        $data['city'] = $city_data;
+        if($city_data != '') {
+            $data['country'] = $this->country->whereId($city_data->country_id)->first();
+            $data['events'] = $this->event->whereId($city_data->id)->get();
+            $data['places'] = $this->place->whereId($city_data->id)->get();
+            if($city_data->country_id > 0) {
+                $data['experiences'] = $this->experience->whereId($city_data->country_id)->get();
+            }
+        }
+        return view('search.index', $data);
     }
 
-    /**
-     * Find searched data.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function find(Request $request)
-    {
-        $city = new City;
-        $country = new Country;
-        $city_data = $city->whereId($request->location)->first();
-        $country_data = $country->whereId($city_data->country_id)->first();
-        $data = [
-            'city' => $city_data,
-            'country' => $country_data,
-        ];
-        dd($country_data);
-    }
 }

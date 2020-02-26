@@ -6,7 +6,7 @@
 			  <div class="join-title-top">Find amazing hotspots.</div>
 		    </div>
 		 </div>
-		 <form method="POST" action="{{ route('searchFindF') }}">
+		 <form method="POST" action="{{ route('searchF') }}">
 		 	@csrf
 			 <div class="row row-top">
 			 	<div class="col-xs-6 col-md-5">
