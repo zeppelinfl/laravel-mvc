@@ -2,9 +2,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md text-left margin-top-40"  style="margin-bottom:40px;">
-				<div class="join-people-title">How It Works</div>
+				<div class="join-people-title">{{ $page->title }}</div>
 				<div class="join-people-line"></div>
-				<div class="join-people-content">Explore some of the best tips from around the world</div>
+				<div class="join-people-content">{{ $page->content }}</div>
 			</div>
 		</div>
 		<div class="row">

@@ -574,3 +574,9 @@ select {
 .content-top-20 {
 	margin-top:20px;
 }
+.content-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}

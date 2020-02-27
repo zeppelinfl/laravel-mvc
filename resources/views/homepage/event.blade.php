@@ -1,9 +1,9 @@
-<div class="content">
+<div class="content content-center">
 	<div class="container-fluid top-content" id="events">
-		<div class="top-title">Discover Events</div>
+		<div class="top-title text-left">{{ $page->title }}</div>
 		<div class="top-title-line pink-color"></div>
-		<div class="top-text">Vestibulum volutpat, lacus a ultrices sagittis, mi neque usismod dui, eu pulvinar nunc sapien ornare nisl.</div>
-		<div class="places-reviews"> 
+		<div class="top-text text-left">{{ $page->content }}</div>
+		<div class="places-reviews text-left"> 
 			@foreach($events as $key => $event)
 				<article class="review-event">
 					<div class="review-image" style="background-image: url({{ asset('storage/'.$event->image) }});">

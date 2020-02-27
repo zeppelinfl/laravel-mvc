@@ -3,9 +3,9 @@
 	<div class="container margins-container-people">
 		<div class="row">
 			<div class="col-md text-left margin-top-40">
-				<div class="people-title">People Talking About Us</div>
+				<div class="people-title">{{ $page->title }}</div>
 				<div class="join-people-line"></div>
-				<div class="people-content grey-color">Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</div>
+				<div class="people-content grey-color">{{ $page->content }}</div>
 			</div>
 		</div>
 		<div class="row">

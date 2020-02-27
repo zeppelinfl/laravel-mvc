@@ -1,9 +1,9 @@
-<div class="content content-top-20" id="places">
+<div class="content content-top-20 content-center" id="places">
 	<div class="container-fluid top-content">
-		<div class="top-title">Top Trending Places</div>
+		<div class="top-title text-left">{{ $page->title }}</div>
 		<div class="top-title-line"></div>
-		<div class="top-text">Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</div>
-		<div class="places-reviews slick-carrousel"> 
+		<div class="top-text text-left">{{ $page->content }}</div>
+		<div class="places-reviews slick-carrousel text-left"> 
 			@foreach($places as $place)
 			<article class="review">
 				<div class="review-image" style="background-image: url({{ asset('storage/places/'.$place->image) }});">

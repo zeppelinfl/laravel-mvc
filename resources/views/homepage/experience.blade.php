@@ -2,9 +2,9 @@
 	<div class="new-places-container" id="experiences">
 		<div class="row title-width">
 			<div class="col-md text-left margin-top-40">
-				<div class="join-people-title">Top-rated Experiences</div>
+				<div class="join-people-title">{{ $page->title }}</div>
 				<div class="join-people-line"></div>
-				<div class="join-people-content">Sed egestas, ante et vulputate volputate volutpat, eros pede semper est</div>
+				<div class="join-people-content">{{ $page->content }}</div>
 			</div>
 		</div>
 		<div class="row white">

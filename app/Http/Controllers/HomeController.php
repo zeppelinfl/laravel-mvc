@@ -49,6 +49,11 @@ class HomeController extends Controller
             'cities' => $this->city->get(),
             'categories' => $this->category->get(),
             'page' => $this->page->whereId(1)->first(),
+            'page_place' => $this->page->whereId(2)->first(),
+            'page_review' => $this->page->whereId(3)->first(),
+            'page_experience' => $this->page->whereId(4)->first(),
+            'page_event' => $this->page->whereId(5)->first(),
+            'page_work' => $this->page->whereId(6)->first(),
         ];
         $places = $this->place->take(3)->get();
         foreach ($places as $key => $value) {
