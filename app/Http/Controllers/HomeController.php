@@ -50,17 +50,17 @@ class HomeController extends Controller
             'categories' => $this->category->get(),
             'page' => $this->page->whereId(1)->first(),
         ];
-        $places = $this->place->get();
+        $places = $this->place->take(3)->get();
         foreach ($places as $key => $value) {
             $places[$key]['subcategory'] = $this->subcategory->where('id', $value->subcategory_id)->first();
         }
         $data['places'] = $this->place->formatTime($places);
-        $reviews = $this->review->get();
+        $reviews = $this->review->take(3)->get();
         foreach($reviews as $key => $value) {
             $reviews[$key]['user'] = $this->user->where('id', $value->user_id)->first();
         }
         $data['reviews'] = $reviews;
-        $experiences = $this->experience->get();
+        $experiences = $this->experience->take(4)->get();
         foreach($experiences as $key => $value) {
             $cities = $this->city->where('country_id', $value->country_id)->get();
             $listing = 0;
@@ -73,7 +73,7 @@ class HomeController extends Controller
         }
         $data['experiences'] = $experiences;
 
-        $events = $this->event->get();
+        $events = $this->event->take(3)->get();
         foreach ($events as $key => $value) {
             $events[$key]['type'] = $this->type->where('id', $value->type_id)->first();
         }

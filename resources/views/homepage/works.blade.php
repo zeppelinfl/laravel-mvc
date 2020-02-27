@@ -10,17 +10,17 @@
 		<div class="row">
 			<div class="col-md align-center">
 				<i class="fa fa-search test-icon"></i>
-				<div class="testimonial-title">Explode The City</div>
+				<div class="testimonial-title">Explore The City</div>
 				<div class="testimonial-content test-content">Sed pretium, ligula sollicitudin laoreet viverra, tortor eu nibh,nullam mollis. Ut justo. Suspendisse potenti.</div>
 			</div>
 			<div class="col-md align-center">
 				<i class="fa fa-search test-icon"></i>
-				<div class="testimonial-title">Explode The City</div>
+				<div class="testimonial-title">Explore The City</div>
 				<div class="testimonial-content test-content">Sed pretium, ligula sollicitudin laoreet viverra, tortor eu nibh,nullam mollis. Ut justo. Suspendisse potenti.</div>
 			</div>
 			<div class="col-md align-center">
 				<i class="fa fa-search test-icon"></i>
-				<div class="testimonial-title">Explode The City</div>
+				<div class="testimonial-title">Explore The City</div>
 				<div class="testimonial-content test-content">Sed pretium, ligula sollicitudin laoreet viverra, tortor eu nibh,nullam mollis. Ut justo. Suspendisse potenti.</div>
 			</div>
 		</div>
