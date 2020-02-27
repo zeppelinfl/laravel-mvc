@@ -7,7 +7,7 @@
 			<div class="col"><h2>Create Review</h2></div>
 		</div>
 		<div class="row">
-			<div class="col"><textarea name="message" placeholder="Review Message"></textarea></div>
+			<textarea class="content-area" name="message" placeholder="Review Message"></textarea>
 		</div>
 		<div class="row">
 			<div class="col">

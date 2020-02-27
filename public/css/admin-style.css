@@ -11,3 +11,7 @@
 .dropdown {
 	height:unset !important;
 }
+.content-area {
+	width:500px;
+	min-height:300px;
+}

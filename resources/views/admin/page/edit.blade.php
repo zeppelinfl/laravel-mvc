@@ -14,7 +14,7 @@
 			<div class="col"><textarea name="content" placeholder="Content">{{ $page->title }}</textarea></div>
 		</div>
 		<div class="row">
-			<div class="col"><input type="submit" value="Create"></div>
+			<div class="col"><input type="submit" value="Save"></div>
 		</div>
 	</form>
 </div>

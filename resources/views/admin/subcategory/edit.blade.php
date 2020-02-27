@@ -11,7 +11,7 @@
 			<div class="col"><input type="text" name="name" value="{{ $subcategory->name }}" placeholder="Name"></div>
 		</div>
 		<div class="row">
-			<div class="col"><input type="submit" value="Create"></div>
+			<div class="col"><input type="submit" value="Save"></div>
 		</div>
 	</form>
 </div>

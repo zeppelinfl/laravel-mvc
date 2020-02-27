@@ -17,7 +17,7 @@
 			<div class="col"><input type="text" name="awesome_sign" value="{{ $category->awesome_sign }}" placeholder="Font-Awesome Sign name eg:'fa-search'"></div>
 		</div>
 		<div class="row">
-			<div class="col"><input type="submit" value="Create"></div>
+			<div class="col"><input type="submit" value="Save"></div>
 		</div>
 	</form>
 </div>

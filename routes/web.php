@@ -18,6 +18,9 @@ Route::get('/', 'HomeController@index')->name('home');
 	Route::post('/store', 'ContactsController@store')->name('contactStoreF');
 	// search
 	Route::post('/search', 'SearchesController@index')->name('searchF');
+	// places
+	Route::get('/places', 'PlacesController@index')->name('placeF');
+	Route::get('/places/show/{$id?}', 'PlacesController@view')->name('placeViewF');
 // home routes [end]
 Auth::routes();
 // admin routes [start]
