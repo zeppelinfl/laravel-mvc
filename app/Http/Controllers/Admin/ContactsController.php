@@ -38,7 +38,6 @@ class ContactsController extends Controller
      */
     public function create()
     {
-
         return view('admin.contact.create');   
     }
 
@@ -83,7 +82,6 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-       
         $user = new User;
         $userEmail = User::where('email', '=', $request->email)->first();
         if(!empty($userEmail)) {
@@ -104,6 +102,4 @@ class ContactsController extends Controller
         $contact->save();
         return redirect()->route('contactA')->with('success', 'Contact stored succesfully!');
     }
-
-
 }

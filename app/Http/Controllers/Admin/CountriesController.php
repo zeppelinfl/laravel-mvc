@@ -92,6 +92,4 @@ class CountriesController extends Controller
         $country->save();
         return redirect()->route('countryA')->with('success', 'Country stored succesfully!');
     }
-
-
 }

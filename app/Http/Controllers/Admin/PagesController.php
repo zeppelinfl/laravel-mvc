@@ -37,7 +37,6 @@ class PagesController extends Controller
      */
     public function create()
     {
-
         return view('admin.page.create');   
     }
 
@@ -82,7 +81,6 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-       
         $page = new Page;
         if($request->id != '') {
             $page = $page->find($request->id);
@@ -93,6 +91,4 @@ class PagesController extends Controller
         $page->save();
         return redirect()->route('pageA')->with('success', 'Page stored succesfully!');
     }
-
-
 }

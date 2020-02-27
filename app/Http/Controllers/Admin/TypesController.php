@@ -37,7 +37,6 @@ class TypesController extends Controller
      */
     public function create()
     {
-
         return view('admin.type.create');   
     }
 
@@ -82,7 +81,6 @@ class TypesController extends Controller
      */
     public function store(Request $request)
     {
-       
         $type = new Type;
         if($request->id != '') {
             $type = $type->find($request->id);
@@ -92,6 +90,4 @@ class TypesController extends Controller
         $type->save();
         return redirect()->route('typeA')->with('success', 'Type stored succesfully!');
     }
-
-
 }

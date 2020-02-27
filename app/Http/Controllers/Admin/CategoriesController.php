@@ -37,7 +37,6 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-
         return view('admin.category.create');   
     }
 
@@ -82,7 +81,6 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-       
         $category = new Category;
         if($request->id != '') {
             $category = $category->find($request->id);
@@ -94,6 +92,4 @@ class CategoriesController extends Controller
         $category->save();
         return redirect()->route('categoryA');
     }
-
-
 }

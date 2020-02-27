@@ -105,6 +105,4 @@ class CitiesController extends Controller
         $city->save();
         return redirect()->route('cityA')->with('success', 'City stored succesfully!');
     }
-
-
 }

@@ -17,7 +17,7 @@ class ContactsController extends Controller
      */
     public function __construct()
     {
-        
+        // construct...
     }
 
     /**
@@ -57,6 +57,4 @@ class ContactsController extends Controller
         $contact->save();
         return redirect()->route('home')->with('success', 'Contact Sent!');
     }
-
-
 }

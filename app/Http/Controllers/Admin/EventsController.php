@@ -96,7 +96,6 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        
         $event = new Event;
         if($request->id != '') {
             $event = $event->find($request->id);
@@ -118,6 +117,4 @@ class EventsController extends Controller
         $event->save();
         return redirect()->route('eventA')->with('success', 'Event stored succesfully!');
     }
-
-
 }

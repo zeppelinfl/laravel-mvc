@@ -37,7 +37,6 @@ class SubcategoriesController extends Controller
      */
     public function create()
     {
-
         return view('admin.subcategory.create');   
     }
 
@@ -82,7 +81,6 @@ class SubcategoriesController extends Controller
      */
     public function store(Request $request)
     {
-       
         $subcategory = new Subcategory;
         if($request->id != '') {
             $subcategory = $subcategory->find($request->id);
@@ -92,6 +90,4 @@ class SubcategoriesController extends Controller
         $subcategory->save();
         return redirect()->route('subcategoryA')->with('success', 'Subcategory stored succesfully!');
     }
-
-
 }

@@ -93,7 +93,6 @@ class ExperiencesController extends Controller
      */
     public function store(Request $request)
     {
-        
         $experience = new Experience;
         if($request->id != '') {
             $experience = $experience->find($request->id);
@@ -108,6 +107,4 @@ class ExperiencesController extends Controller
         $experience->save();
         return redirect()->route('experienceA')->with('success', 'Experience stored succesfully!');
     }
-
-
 }

@@ -48,7 +48,7 @@ class PlacesController extends Controller
     {
         $city = new City;
         $subcategory = new Subcategory;
-        return view('admin.place.create', ['cities' => $city->select('id', 'name')->get(), 'subcategories' => $subcategory->select('id', 'name')->get()]);   
+        return view('admin.place.create', ['cities' => $city->select('id', 'name')->get(), 'subcategories' => $subcategory->select('id', 'name')->get()]);
     }
 
     /**
@@ -96,7 +96,6 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-        
         $place = new Place;
         if($request->id != '') {
             $place = $place->find($request->id);
@@ -115,6 +114,4 @@ class PlacesController extends Controller
         $place->save();
         return redirect()->route('placeA')->with('success', 'Place stored succesfully!');
     }
-
-
 }

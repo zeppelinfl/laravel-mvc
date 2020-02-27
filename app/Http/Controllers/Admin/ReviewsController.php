@@ -102,6 +102,4 @@ class ReviewsController extends Controller
         $review->save();
         return redirect()->route('reviewA')->with('success', 'Review stored succesfully!');
     }
-
-
 }
