@@ -21,4 +21,13 @@
 @include('homepage.join', ['page' => $page])
 @include('homepage.review', ['reviews' => $reviews])
 @include('homepage.stats')
+@include('homepage.experience', ['experiences' => $experiences])
+<div class="container">
+    <div class="row justify-content-center">
+      	@include('homepage.event', ['events' => $events])  
+    </div>
+</div>
+<div class="container">
+	@include('homepage.works')
+</div>
 @endsection

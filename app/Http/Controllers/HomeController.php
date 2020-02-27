@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+use App\Models\Event;
+use App\Models\Type;
 use App\Models\City;
+use App\Models\Country;
 use App\Models\Category;
 use App\Models\Place;
 use App\Models\Subcategory;
 use App\Models\Page;
 use App\Models\Review;
-use App\User;
+use App\Models\Experience;
 
 class HomeController extends Controller
 {
@@ -21,13 +25,17 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        $this->event = new Event;
+        $this->type = new Type;
         $this->city = new City;
+        $this->country = new Country;
         $this->category = new Category;
         $this->place = new Place;
         $this->subcategory = new Subcategory;
         $this->page = new Page;
         $this->review = new Review;
         $this->user = new User;
+        $this->experience = new Experience;
     }
 
     /**
@@ -52,6 +60,25 @@ class HomeController extends Controller
             $reviews[$key]['user'] = $this->user->where('id', $value->user_id)->first();
         }
         $data['reviews'] = $reviews;
+        $experiences = $this->experience->get();
+        foreach($experiences as $key => $value) {
+            $cities = $this->city->where('country_id', $value->country_id)->get();
+            $listing = 0;
+            foreach ($cities as $city) {
+                $listing += $city->listings;
+            }
+            $experiences[$key]['listings'] = $listing;
+            $experiences[$key]['cities'] = count($cities);
+            $experiences[$key]['name'] = $this->country->whereId($value->country_id)->first();
+        }
+        $data['experiences'] = $experiences;
+
+        $events = $this->event->get();
+        foreach ($events as $key => $value) {
+            $events[$key]['type'] = $this->type->where('id', $value->type_id)->first();
+        }
+        $data['events'] = $events;
+
         return view('home', $data);
     }
 }
