@@ -31,4 +31,24 @@ class Place extends Model
     {
         return $this->belongsTo('App\Models\Subcategory', 'subcategory_id');
     }
+
+    /**
+     * Format place time.
+     */
+    public function formatTime($data)
+    {
+        $currentTime = date('H:i');
+        foreach ($data as $key => $value) {
+            if($currentTime < $value->open) {
+                $data[$key]['time'] = 'Opens at '.$value->open;
+            } elseif($currentTime > $value->close) {
+                $data[$key]['time'] = 'Opens at '.$value->open;
+            } elseif($currentTime > $value->open && $currentTime < $value->close) {
+                $data[$key]['time'] = 'Open untill '.$value->close;
+            } else {
+                $data[$key]['time'] = 'Closed';
+            }
+        }
+        return $data;
+    }
 }

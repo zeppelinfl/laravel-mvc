@@ -15,5 +15,10 @@
 			@endif
 		@endif
 	</div>
-	@include('search.event', ['events' => $events])
+	@if(count($events) > 0)
+		@include('search.event', ['events' => $events])
+	@endif
+	@if(count($places) > 0)
+		@include('search.place', ['places' => $places])
+	@endif
 @endsection

@@ -108,7 +108,7 @@ class PlacesController extends Controller
             $place->image = $request->image->hashName();
         }
         foreach ($request->all() as $key => $value) {
-            if($key != '_token') {
+            if($key != '_token' && $key != 'image') {
                 $place->$key = $value;
             }
         }

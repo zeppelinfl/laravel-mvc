@@ -10,6 +10,7 @@ use App\Models\Event;
 use App\Models\Experience;
 use App\Models\Place;
 use App\Models\Type;
+use App\Models\Subcategory;
 
 class SearchesController extends Controller
 {
@@ -26,6 +27,7 @@ class SearchesController extends Controller
         $this->experience = new Experience;
         $this->place = new Place;
         $this->type = new Type;
+        $this->subcategory = new Subcategory;
     }
 
     /**
@@ -46,7 +48,11 @@ class SearchesController extends Controller
                 $events[$key]['type'] = $this->type->where('id', $value->type_id)->first();
             }
             $data['events'] = $events;
-            $data['places'] = $this->place->where('city_id', $city_data->id)->get();
+            $places = $this->place->where('city_id', $city_data->id)->get();
+            foreach ($places as $key => $value) {
+                $places[$key]['subcategory'] = $this->subcategory->where('id', $value->subcategory_id)->first();
+            }
+            $data['places'] = $this->place->formatTime($places);
             if($city_data->country_id > 0) {
                 $data['experiences'] = $this->experience->where('country_id', $city_data->country_id)->get();
             }

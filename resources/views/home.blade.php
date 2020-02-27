@@ -8,4 +8,17 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row justify-content-center">
+      	@include('homepage.categories', ['categories' => $categories])  
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+      	@include('homepage.place', ['places' => $places])  
+    </div>
+</div>
+@include('homepage.join', ['page' => $page])
+@include('homepage.review', ['reviews' => $reviews])
+@include('homepage.stats')
 @endsection
