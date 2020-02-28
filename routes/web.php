@@ -110,6 +110,9 @@ Route::namespace('Admin')->group(function () {
 		Route::get('/pages/edit/{id}', 'PagesController@edit')->name('pageEditA');
 		Route::get('/pages/view/{id}', 'PagesController@view')->name('pageViewA');
 		Route::get('/pages/delete/{id}', 'PagesController@delete')->name('pageDeleteA');
+		//admin users
+		Route::get('/users/update/{id}', 'UsersController@update')->name('userUpdateA');
+		Route::post('/users/store', 'UsersController@store')->name('userStoreA');
 	});
 });
 // admin routes [end]
