@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel MVC') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/slick/slick.min.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
 
@@ -20,8 +19,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="{{ asset('css/slick/slick.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/slick/slick-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">

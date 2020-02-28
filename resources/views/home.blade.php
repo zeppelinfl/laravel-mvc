@@ -29,4 +29,5 @@
 <div class="container">
 	@include('homepage.works', ['page' => $page_work])
 </div>
+<example-component></example-component>
 @endsection
