@@ -27,3 +27,6 @@
 		</div>
 	</div>
 </div>
+<div class="content view-all-events">
+	<a href="{{ route('placeF') }}"><span class="red-color">View All Places</span>({{ count($places) }})</a>
+</div>

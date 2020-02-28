@@ -560,6 +560,7 @@ select {
 .view-all-events {
 	text-align: center;
 	margin-bottom:20px;
+	margin-top:20px;
 }
 .content-white {
 	background-color:#eeeeee;

@@ -43,8 +43,7 @@ class PlacesController extends Controller
      */
     public function view($id)
     {
-        dd($id);
-        $place = $this->page->whereId($id)->get();
+        $place = $this->place->whereId($id)->first();
         return view('place.view', ['place' => $place]);
     }
 }

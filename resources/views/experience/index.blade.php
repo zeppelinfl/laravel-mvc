@@ -1,12 +1,7 @@
-<div class="content">
+@extends('layouts.app')
+@section('content')
+<div class="content content-white">
 	<div class="new-places-container" id="experiences">
-		<div class="row title-width">
-			<div class="col-md text-left margin-top-40">
-				<div class="join-people-title">{{ $page->title }}</div>
-				<div class="join-people-line"></div>
-				<div class="join-people-content">{{ $page->content }}</div>
-			</div>
-		</div>
 		<div class="row white">
 			@foreach($experiences as $experience)
 				<div class="col-md picture-set" style="background-image: url({{ asset('storage/experiences/'.$experience->image) }})">
@@ -24,6 +19,4 @@
 		</div>
 	</div>
 </div>
-<div class="container">
-	<hr>
-</div>
+@endsection

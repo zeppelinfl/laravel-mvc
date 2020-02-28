@@ -20,7 +20,13 @@ Route::get('/', 'HomeController@index')->name('home');
 	Route::post('/search', 'SearchesController@index')->name('searchF');
 	// places
 	Route::get('/places', 'PlacesController@index')->name('placeF');
-	Route::get('/places/show/{$id?}', 'PlacesController@view')->name('placeViewF');
+	Route::get('/places/view/{id}', 'PlacesController@view')->name('placeViewF');
+	// places
+	Route::get('/events', 'EventsController@index')->name('eventF');
+	Route::get('/events/view/{id}', 'EventsController@view')->name('eventViewF');
+	// places
+	Route::get('/experiences', 'ExperiencesController@index')->name('experienceF');
+	Route::get('/experiences/view/{id}', 'ExperiencesController@view')->name('experienceViewF');
 // home routes [end]
 Auth::routes();
 // admin routes [start]
