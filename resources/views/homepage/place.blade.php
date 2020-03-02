@@ -1,9 +1,13 @@
-<div class="content content-top-20 content-center" id="places">
-	<div class="container-fluid top-content">
-		<div class="top-title text-left">{{ $page->title }}</div>
-		<div class="top-title-line"></div>
-		<div class="top-text text-left">{{ $page->content }}</div>
-		<div class="places-reviews slick-carrousel text-left"> 
+<div class="content">
+	<div class="new-places-container" id="experiences">
+		<div class="row title-width">
+			<div class="col-md text-left margin-top-40">
+				<div class="top-title text-left">{{ $page->title }}</div>
+				<div class="top-title-line"></div>
+				<div class="top-text text-left">{{ $page->content }}</div>
+			</div>
+		</div>
+		<div class="row">
 			@foreach($places as $place)
 			<article class="review">
 				<a href="{{ route('placeViewF', $place->id) }}">
@@ -28,5 +32,5 @@
 	</div>
 </div>
 <div class="content view-all-events">
-	<a href="{{ route('placeF') }}"><span class="red-color">View All Places</span>({{ count($places) }})</a>
+	<a href="{{ route('placeF') }}" class="view_all"><span class="red-color">View All Places</span>({{ $place_count }})</a>
 </div>

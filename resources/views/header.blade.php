@@ -19,10 +19,9 @@
 				<div class="dropdown">
 				  <button class="dropbtn pages-text">Pages<i class="fa fa-caret-down hover-border caret-drop"></i></button>
 				  <div class="dropdown-content">
-				    <a href="/event">Events</a>
-				    <a href="/place">Places</a>
-				    <a href="/experience">Experiences</a>
-				    <a href="/review">Reviews</a>
+				    <a href="{{ route('eventF') }}">Events</a>
+				    <a href="{{ route('placeF') }}">Places</a>
+				    <a href="{{ route('experienceF') }}">Experiences</a>
 				  </div>
 				</div> 
 				<a href="{{ route('contactF') }}">

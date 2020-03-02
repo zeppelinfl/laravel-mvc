@@ -54,6 +54,8 @@ class HomeController extends Controller
             'page_experience' => $this->page->whereId(4)->first(),
             'page_event' => $this->page->whereId(5)->first(),
             'page_work' => $this->page->whereId(6)->first(),
+            'place_count' => $this->place->count(),
+            'event_count' => $this->event->count(),
         ];
         $places = $this->place->take(3)->get();
         foreach ($places as $key => $value) {

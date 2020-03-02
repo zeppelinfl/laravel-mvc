@@ -510,7 +510,7 @@ select {
 	margin-top:50px;
 }
 .review {
-	float: left;
+	
 }
 
 
@@ -580,4 +580,7 @@ select {
 }
 .text-left {
 	text-align: left;
+}
+.view_all {
+	color:#000000 !important;
 }
