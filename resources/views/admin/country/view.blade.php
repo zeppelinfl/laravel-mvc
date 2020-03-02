@@ -6,5 +6,11 @@
 		<div class="col col-3">Name</div>
 		<div class="col col-2 bold">{{ $country->name }}</div>
 	</div>
+	<div class="row row-view">
+		<div class="col col-3">Cities</div>
+		@foreach($country->city as $city)
+			{{ $city->name }},
+		@endforeach
+	</div>
 </div>
 @endsection

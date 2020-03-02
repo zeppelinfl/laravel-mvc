@@ -60,7 +60,8 @@ class CountriesController extends Controller
     public function view($id)
     {
         $country = new Country;
-        return view('admin.country.view', ['country' => $country->where('id', '=', $id)->first()]);   
+        $data = $country->find($id);
+        return view('admin.country.view', ['country' => $country->find($id)]);   
     }
 
     /**

@@ -14,4 +14,12 @@ class Country extends Model
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * Get the city that has the country.
+     */
+    public function city()
+    {
+        return $this->hasMany('App\Models\City', 'country_id', 'id');
+    }
 }

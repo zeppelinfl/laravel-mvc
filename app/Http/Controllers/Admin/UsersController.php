@@ -35,7 +35,7 @@ class UsersController extends Controller
      *
      * @return void
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
         $this->user = $this->user->find($request->id);
 
@@ -49,5 +49,4 @@ class UsersController extends Controller
         $this->user->save();
         return redirect()->route('admin')->with('success', 'User has been updated!');
     }
-
 }
